@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header'
+import Player from './Player'
 
-class App extends Component {
-  render() {
+
+
+
+const App = (props) => {
+  console.log(props.initialPlayers);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header
+        title="Scoreboard"
+        totalPlayers ={props.initialPlayers.length}
+        />
+        {/*Add players here*/}
+        {props.initialPlayers.map(
+          player =>
+          <Player
+           playerName = {player.name}
+          score = {player.score}
+          key = {player.id.toString()}/>
+        )}
+
       </div>
     );
   }
-}
+
 
 export default App;
