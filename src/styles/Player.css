@@ -241,3 +241,11 @@ svg {
     font-size: 2em;
     line-height: 2em;
   }
+
+  .App > .player:last-child{
+    border-radius: 10px;
+  }
+
+  button.counter-action.increment{
+    border-bottom-right-radius: 10px;
+  }

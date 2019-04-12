@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../styles/App.css';
 import Header from './Header'
 import Player from './Player'
 
 
 class App extends React.Component{
 
-  state = {
+constructor() {
+  super()
+  this.state = {
     players: [
       {
         name: "Alfy",
@@ -23,7 +25,7 @@ class App extends React.Component{
       }
     ]
   }
-
+}
   handleRemoveplayer = (id) => {
     this.setState( prevState => {
       return {

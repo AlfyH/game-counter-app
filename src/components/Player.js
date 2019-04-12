@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Player.css'
+import '../styles/Player.css'
 import Counter from './Counter.js'
 
 const Player =(props)=> {
