@@ -5,28 +5,61 @@ import Header from './Header'
 import Player from './Player'
 
 
+class App extends React.Component{
 
+  state = {
+    players: [
+      {
+        name: "Alfy",
+        id: 1
+      },
+      {
+        name: "Emma",
+        id: 2
+      },
+      {
+        name: "Shirin",
+        id: 3
+      }
+    ]
+  }
 
-const App = (props) => {
-  console.log(props.initialPlayers);
+  handleRemoveplayer = (id) => {
+    this.setState( prevState => {
+      return {
+      players: this.state.players.filter( p => p.id !== id)
+      };
+    });
+  }
+
+  render() {
     return (
       <div className="App">
         <Header
         title="Scoreboard"
-        totalPlayers ={props.initialPlayers.length}
+        totalPlayers ={this.state.players.length}
         />
         {/*Add players here*/}
-        {props.initialPlayers.map(
+        {this.state.players.map(
           player =>
           <Player
-           playerName = {player.name}
-          score = {player.score}
+          playerName = {player.name}
+          removePlayer={this.handleRemoveplayer}
+          id = {player.id}
+  /*        score = {player.score}*/
           key = {player.id.toString()}/>
         )}
 
       </div>
-    );
+    );}
   }
 
 
 export default App;
+
+{/*
+  Application state
+  Date that is available to the entire Application
+  Component state
+  State that is specific to a component and not shared outside of the component.
+  */}
