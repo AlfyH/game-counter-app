@@ -35,6 +35,7 @@ constructor() {
   }
 
   render() {
+    console.log('a');
     return (
       <div className="App">
         <Header
