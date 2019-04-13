@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
+import React from 'react';
+//import logo from '../logo.svg';
 import '../styles/App.css';
 import Header from './Header'
 import Player from './Player'
@@ -65,12 +65,9 @@ state = {
   }
 
   render() {
-    console.log('a');
     return (
       <div className="App">
-        <Header
-        title="Scoreboard"
-        players ={this.state.players}
+        <Header players ={this.state.players}
         />
         {/*Add players here*/}
         {this.state.players.map( (player, index) =>
