@@ -130,7 +130,8 @@ svg {
   .player-name {
     flex-grow: 1;
     line-height: 3.5em;
-    padding-left: 10px;
+    padding-left: 50px;
+    text-align: left;
   }
 
   .remove-player {
